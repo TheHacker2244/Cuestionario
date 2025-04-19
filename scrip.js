@@ -1,4 +1,4 @@
-let correctas = [3, 1, 2, 3, 2, 1, 3, 2, 1, 3];
+let correctas = [1, 1, 2, 3, 2, 1, 3, 2, 1, 3];
 
 let opcion_elegida=[]
 
@@ -15,13 +15,21 @@ function respuesta(numero_pregunta, seleccionada){
 
     seleccionada.style.backgroundColor = "yellow";
 } 
-function coregir(){
+function corregir(){
     cantidad_correctas = 0;
     for(i=0; i < correctas.length;i++){
-        if(correctas[i]==opcion_elegidad[i]){
+        if(correctas[i]==opcion_elegida[i]){
             cantidad_correctas++;
         }
 
     }
-    document.getElementById("resultado").innerHTML = cantidad_coreectas
+    document.getElementById("resultado").innerHTML = cantidad_correctas
+}
+
+const BotonCorregir = document.getElementById('BotonCorregir');
+
+if (BotonCorregir) {
+    BotonCorregir.addEventListener('click', corregir);
+} else {
+    console.error('El botón con ID "BotonCorregir" no existe.');
 }
